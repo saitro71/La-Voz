@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="style.xsl"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss version="2.0">
   <channel>
     <title>La Voz</title>
     <link>https://lavozimagenzac.com.mx/</link>
-    <description>Se oye y se ve</description>
+    <description>Se oye y Se ve</description>
     <language>es</language>
-    <itunes:email>saitro71@hotmail.com</itunes:email>
     <item>
-      <title>Título del Episodio</title>
+      <title>La Voz 96.1 FM Radio</title>
       <description>Se oye y se ve</description>
       <enclosure url="https://sp2.servidorrprivado.com:10800/stream?type=mp3" type="audio/mp3" />
       <pubDate>18 de Mayo</pubDate>
     </item>
+
   </channel>
 </rss>
