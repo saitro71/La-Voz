@@ -1,22 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import xml.etree.ElementTree as ET
 
-<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+# Crear el elemento raíz del XML
+rss = ET.Element("rss")
+rss.set("version", "2.0")
 
+# Crear el elemento <channel>
+channel = ET.SubElement(rss, "channel")
 
-<rss version="2.0">
-  <channel>
-    <title>La Voz</title>
-    <link>https://lavozimagenzac.com.mx/</link>
-    <description>Se oye y se ve</description>
-    <language>es</language>
-    <item>
-      <title>Título del Episodio</title>
-      <description>Se oye y se ve</description>
-      <enclosure url="https://sp2.servidorrprivado.com:10800/stream?type=mp3" type="audio/mp3" />
-      <pubDate>18 de Mayo</pubDate>
-    </item>
-    owner = ET.SubElement(channel, "owner")
+# Agregar elementos al canal
+title = ET.SubElement(channel, "title")
+title.text = "La Voz"
+
+link = ET.SubElement(channel, "link")
+link.text = "https://lavozimagenzac.com.mx/"
+
+description = ET.SubElement(channel, "description")
+description.text = "Se oye y se ve"
+
+language = ET.SubElement(channel, "language")
+language.text = "es"
+
+# Agregar el elemento <owner>
+owner = ET.SubElement(channel, "owner")
 email = ET.SubElement(owner, "email")
-email.text = "saitro71@hotmail.com"
-  </channel>
-</rss>
+email.text = "correo@example.com"  # Reemplazar con la dirección de correo electrónico real del propietario
+
+# Crear el elemento <item> para el episodio
+item = ET.SubElement(channel, "item")
+
+item_title = ET.SubElement(item, "title")
+item_title.text = "Título del Episodio"
+
+item_description = ET.SubElement(item, "description")
+item_description.text = "Se oye y se ve"
+
+item_enclosure = ET.SubElement(item, "enclosure")
+item_enclosure.set("url", "https://sp2.servidorrprivado.com:10800/stream?type=mp3")
+item_enclosure.set("type", "audio/mp3")
+
+item_pubDate = ET.SubElement(item, "pubDate")
+item_pubDate.text = "18 de Mayo"
+
+# Convertir el XML a una cadena
+xml_str = ET.tostring(rss, encoding="utf-8")
+
+# Guardar el XML en un archivo
+with open("feed.xml", "wb") as f:
+    f.write(xml_str)
+
