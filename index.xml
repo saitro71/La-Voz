@@ -15,5 +15,8 @@
       <enclosure url="https://sp2.servidorrprivado.com:10800/stream?type=mp3" type="audio/mp3" />
       <pubDate>18 de Mayo</pubDate>
     </item>
+    <owner>
+    <email>saitro71@hotmail.com</email>
+  </owner>
   </channel>
 </rss>
