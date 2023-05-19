@@ -1,31 +1,17 @@
-import xml.etree.ElementTree as ET
-
-# Crear el elemento raíz del XML
-rss = ET.Element("rss")
-rss.set("version", "2.0")
-
-# Crear el elemento <?xml-stylesheet>
-stylesheet = ET.ProcessingInstruction("xml-stylesheet", 'type="text/xsl" href="style.xsl"')
-rss.append(stylesheet)
-
-# Crear el elemento <channel> y otros elementos
-# ...
-
-# Convertir el XML a una cadena
-xml_str = ET.tostring(rss, encoding="utf-8")
-
-# Guardar el XML en un archivo
-with open("feed.xml", "wb") as f:
-    f.write(xml_str)
-
-# Subir el archivo a GitHub
-# Asegúrate de tener configurado git y haber clonado el repositorio en tu máquina
-
-# Agregar el archivo al control de versiones
-!git add feed.xml style.xsl
-
-# Hacer un commit
-!git commit -m "Agregar archivos feed.xml y style.xsl"
-
-# Hacer push al repositorio remoto en GitHub
-!git push origin master
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<rss version="2.0">
+  <channel>
+    <title>La Voz</title>
+    <link>https://lavozimagenzac.com.mx/</link>
+    <description>Se oye y se ve</description>
+    <language>es</language>
+    <owner>Email Address</owner> saitro71@hotmail.com
+    <item>
+      <title>Título del Episodio</title>
+      <description>Se oye y se ve</description>
+      <enclosure url="https://sp2.servidorrprivado.com:10800/stream?type=mp3" type="audio/mp3" />
+      <pubDate>18 de Mayo</pubDate>
+    </item>
+  </channel>
+</rss>
